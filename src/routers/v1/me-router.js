@@ -9,7 +9,8 @@ var passport = require('../../passports/jwt-passport');
 
 router.get('/', passport, (request, response, next) => {
     var user = request.user;
-    response.send(user);
+    var result = resultFormatter.ok(apiVersion, 200, user);
+    response.send(200, result); 
 });
 
 
