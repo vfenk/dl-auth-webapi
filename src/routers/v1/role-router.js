@@ -14,10 +14,12 @@ router.get("/", passport, function(request, response, next) {
 
             var query = request.query;
             query.filter = !query.filter ? {} : JSON.parse(query.filter);
-            
+
             manager.read(query)
                 .then(docs => {
-                    var result = resultFormatter.ok(apiVersion, 200, docs);
+                    var result = resultFormatter.ok(apiVersion, 200, docs.data);
+                    delete docs.data;
+                    result.info = docs;
                     response.send(200, result);
                 })
                 .catch(e => {
