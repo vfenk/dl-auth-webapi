@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "6.9.2",
+    "npm": "3.10.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danliris/dl-auth-webapi.git"
@@ -17,6 +21,7 @@
   },
   "homepage": "https://github.com/danliris/dl-auth-webapi#readme",
   "dependencies": {
+    "dl-models": "git+https://github.com/danliris/dl-models.git",
     "dl-module": "git+https://github.com/danliris/dl-module.git",
     "jsonwebtoken": "^7.1.9",
     "mongo-factory": "^1.0.0",
